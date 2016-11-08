@@ -17,7 +17,7 @@ module.exports = function (packagedAppPath, codeSign) {
     iconUrl: `https://raw.githubusercontent.com/atom/atom/master/resources/app-icons/${CONFIG.channel}/atom.ico`,
     loadingGif: path.join(CONFIG.repositoryRootPath, 'resources', 'win', 'loading.gif'),
     outputDirectory: CONFIG.buildOutputPath,
-    remoteReleases: `https://atom.io/api/updates?version=${CONFIG.appMetadata.version}`,
+    remoteReleases: `https://atom.io/api/updates${process.arch === 'x64' ? '-x64' : ''}`,
     setupIcon: path.join(CONFIG.repositoryRootPath, 'resources', 'app-icons', CONFIG.channel, 'atom.ico')
   }
 
