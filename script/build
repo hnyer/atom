@@ -35,6 +35,7 @@ const dumpSymbols = require('./lib/dump-symbols')
 const generateAPIDocs = require('./lib/generate-api-docs')
 const generateMetadata = require('./lib/generate-metadata')
 const generateModuleCache = require('./lib/generate-module-cache')
+const generateSnapshotScript = require('./lib/generate-snapshot-script')
 const installApplication = require('./lib/install-application')
 const packageApplication = require('./lib/package-application')
 const prebuildLessCache = require('./lib/prebuild-less-cache')
@@ -48,7 +49,7 @@ process.on('unhandledRejection', function (e) {
   process.exit(1)
 })
 
-require('./lib/generate-snapshot-script')()
+generateSnapshotScript()
 return
 cleanOutputDirectory()
 copyAssets()
